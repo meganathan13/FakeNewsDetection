@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Marvel HTML Bootstrap 4 Template</title>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/unicons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/val.css') }}">
+
+    <!-- MAIN STYLE -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/tooplate-style.css') }}">
+    
+<!--
+
+Tooplate 2115 Marvel
+
+https://www.tooplate.com/view/2115-marvel
+
+-->
+  </head>
+  <body>
+
+    <h2 class="head1">Multilingual Fake News Detection</h2>
+
+    <!-- ABOUT -->
+    <section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
+                    <div class="about-text">
+                        <small class="small-text">Welcome to <span class="mobile-block">News Prediction Portal!</span></small>
+                        <h1 class="animated animated-text">
+                            <span class="mr-2">Language used,</span>
+                                <div class="animated-info">
+                                    <span class="animated-item">English</span>
+                                    <span class="animated-item">Hindi</span>
+                                    <span class="animated-item">Bangla</span>
+                                    <span class="animated-item">French</span>
+                                    <span class="animated-item">German</span>
+                                </div>
+                        </h1>
+
+                        <p>This Model Predicts text of above five languages whether the given text is fake or true using ensemble 
+                        learning method.</p>
+                        
+                        <div class="custom-btn-group mt-4">
+                          <a href="https://github.com/" class="btn custom-btn custom-btn-bg custom-btn-link">To Know More</a>
+                          <a href="#button" class="btn custom-btn custom-btn-bg custom-btn-link">Test Model</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-md-12 col-12">
+                    <div class="about-image svg">
+                        <img src="{{ url_for('static', filename='images/undraw_software_engineer_lvl5.svg') }}" class="img-fluid"alt="svg image">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FEATURES -->
+    <section >
+                <h2 class="head1">Fake News Model</h2>
+                    <p style="text-align: center; margin-top: 10px;">Input the text in the  following field to check whether the news is true or fake.</p>
+                    <div class="search-form">
+                     <form action="/" method="POST">
+                       <input class="in" id="in" type="text" name="txt" maxlength="10000">
+                         <button id="button"></button>
+                      <input class="sub" type="submit" name="submit">
+                    </form>
+                    </div>
+
+                    <div style="display: flex;">
+                        <p style="margin-left: 450px; margin-top: 10px; font-weight: bold;">ACCURACY</p>
+                        <p style="margin-left: 100px; margin-top: 10px;  font-weight: bold;">PREDICTION</p>
+                        <p style="margin-left: 100px; margin-top: 10px;  font-weight: bold;">LANGUAGE</p>
+                    </div>
+
+                    <meter style="margin-left: 450px;" value="70" min="1" max="100"></meter>
+                    <p style="margin-left: 450px; font-weight:italic;">70 percent</p>
+                    <div>
+                        <span >{% if lang1 == 'en' %}
+                        <span style="color: maroon;  font-size:30px;">ENGLISH</span>
+                        <span >{% elif lang1 == 'hi' %}
+                        <span style="color: maroon;  font-size:30px;">HINDI</span>
+                        <span >{% elif lang1 == 'bn' %}
+                        <span style="color: maroon;  font-size:30px;">BANGLA</span>
+                        <span >{% elif lang1 == 'de' %}
+                        <span style="color: maroon;  font-size:30px;">GERMAN</span>
+                        <span >{% elif lang1 == 'fr' %}
+                        <span style="color: maroon;  font-size:30px;">FRENCH</span>
+                        {% endif  %}
+                        </span>
+                    </div>
+
+                    <div>
+
+                     <p>{% if result == 0 %}
+                       <p style="color: darkred;  font-size:30px;">Fake News</p>
+                     {% elif result == 1 %}
+                        <p style="color: green;  font-size:30px;">True News</p>
+                     {% else  %}
+                        <p style="color: darkblue;  font-size:30px;">Invalid News</p>
+                     {% endif  %}
+                    </p> 
+                    </div> 
+                
+       
+    </section>
+
+    <script src="{{ url_for('static',filename='js/jquery-3.3.1.min.js') }}"> </script>
+    <script src="{{ url_for('static',filename='js/popper.min.js') }}"> </script>
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"> </script>
+    <script src="{{ url_for('static',filename='js/Headroom.js') }}"> </script>
+    <script src="{{ url_for('static',filename='js/jQuery.headroom.js') }}"> </script>
+    <script src="{{ url_for('static',filename='js/owl.carousel.min.js') }}"> </script>
+    <script src="{{ url_for('static',filename='js/smoothscroll.js') }}"> </script>
+    <script src="{{ url_for('static',filename='js/custom.js') }}"> </script>
+    <script src="{{ url_for('static',filename='js/val.js') }}"> </script>
+   
+
+  </body>
+</html>
